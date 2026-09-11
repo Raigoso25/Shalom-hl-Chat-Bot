@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalom HYL · Asistente de ventas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ============ SIDEBAR / BRAND RAIL ============ -->
+  <aside class="rail">
+    <div class="rail-brand">
+      <div class="rail-mark">SH</div>
+      <div class="rail-brand-text">
+        <h1>Shalom HYL</h1>
+        <p>Asistente de ventas</p>
+      </div>
+    </div>
+
+    <div class="rail-status" id="statusPill">
+      <span class="dot"></span>
+      <span id="statusText">En línea</span>
+    </div>
+
+    <nav class="rail-nav" id="railNav">
+      <button class="rail-tab active" data-tab="chat">
+        <span class="rail-tab-icon">💬</span> Conversación
+      </button>
+      <button class="rail-tab" data-tab="dashboard">
+        <span class="rail-tab-icon">📊</span> Dashboard
+      </button>
+      <button class="rail-tab" data-tab="proyecto">
+        <span class="rail-tab-icon">🗂️</span> Ficha del proyecto
+      </button>
+    </nav>
+
+    <button class="rail-reset" id="resetBtn">↺ Reiniciar conversación</button>
+
+    <div class="rail-footnote">Prototipo académico · Trend + Tech</div>
+  </aside>
+
+  <!-- ============ CHAT PANEL ============ -->
+  <main class="panel" id="panel-chat">
+    <header class="chat-header">
+      <div class="chat-header-info">
+        <div class="avatar">SH</div>
+        <div>
+          <h2>Shalom HYL</h2>
+          <p id="chatSubtitle">Asistente virtual · en línea</p>
+        </div>
+      </div>
+      <div class="chat-header-actions">
+        <div class="cart-pill" id="cartPill" data-action="ver-carrito">
+          🛒 <span id="cartCount">0</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="tiktok-banner" id="tiktokBanner" data-action="entrada-tiktok">
+      <span>🔥 ¿Llegaste desde TikTok? Toca aquí para ver lo más pedido</span>
+      <span class="tiktok-arrow">→</span>
+    </div>
+
+    <div class="messages" id="messages"></div>
+
+    <div class="quick-replies" id="quickReplies"></div>
+
+    <form class="composer" id="composer">
+      <input type="text" id="composerInput" placeholder="Escribe un mensaje…" autocomplete="off">
+      <button type="submit" id="sendBtn" aria-label="Enviar">➤</button>
+    </form>
+  </main>
+
+  <!-- ============ DASHBOARD PANEL ============ -->
+  <section class="panel hidden" id="panel-dashboard">
+    <header class="section-header">
+      <h2>Dashboard de negocio</h2>
+      <span class="badge-demo">Datos simulados para el prototipo</span>
+    </header>
+
+    <div class="kpi-grid" id="kpiGrid"></div>
+
+    <div class="card chart-card">
+      <h3>Pedidos: antes vs. después del chatbot</h3>
+      <p class="muted">Comparación simulada del volumen mensual de pedidos gestionados por WhatsApp manual frente al flujo automatizado.</p>
+      <div class="bar-chart" id="barChart"></div>
+    </div>
+
+    <div class="card">
+      <h3>Estado del inventario</h3>
+      <p class="muted">Existencias simuladas por producto. Se actualizan al confirmar pedidos dentro de esta demo.</p>
+      <div class="stock-table" id="stockTable"></div>
+    </div>
+
+    <div class="card">
+      <h3>Pedidos recientes (simulados)</h3>
+      <div class="orders-table" id="ordersTable"></div>
+    </div>
+  </section>
+
+  <!-- ============ PROYECTO / INFO PANEL ============ -->
+  <section class="panel hidden" id="panel-proyecto">
+    <header class="section-header">
+      <h2>Ficha del proyecto</h2>
+      <span class="badge-demo">Trend + Tech</span>
+    </header>
+    <div class="doc" id="proyectoDoc"></div>
+  </section>
+
+</div>
+
+<!-- Mobile bottom tab bar -->
+<nav class="mobile-tabs" id="mobileTabs">
+  <button class="mtab active" data-tab="chat"><span>💬</span>Chat</button>
+  <button class="mtab" data-tab="dashboard"><span>📊</span>Dashboard</button>
+  <button class="mtab" data-tab="proyecto"><span>🗂️</span>Proyecto</button>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
